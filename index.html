@@ -15,7 +15,7 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"></noscript>
 <style>
 :root{
-  --bg:#080E1A;--bg2:#0D1525;--bg3:#132033;--border:#1E2E45;
+  --bg:#000000;--bg2:#0F1B30;--bg3:#162440;--border:#243552;
   --accent:#C8A96E;--accent2:#9ECFCB;--text:#EDE9E3;--muted:#6B717D;
   --white:#fff;--danger:#D94F4F;--font:'Inter',sans-serif;--r:4px;--t:.22s ease;--max:1140px;
 }
@@ -37,7 +37,7 @@ body[data-L="ru"] [data-lang="ru"]{display:inherit}
 
 /* ── HEADER ── */
 header{position:fixed;top:0;left:0;right:0;z-index:200;height:66px;
-  background:rgba(8,14,26,.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+  background:rgba(0,0,0,.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
 .hdr{max-width:var(--max);margin:0 auto;padding:0 28px;height:100%;
   display:flex;align-items:center;gap:16px}
 .logo{background:none;border:none;display:flex;align-items:center;gap:8px;
@@ -88,8 +88,8 @@ header{position:fixed;top:0;left:0;right:0;z-index:200;height:66px;
 .btn{display:inline-flex;align-items:center;gap:8px;border:none;
   font-family:var(--font);font-weight:400;font-size:14px;letter-spacing:.01em;
   padding:13px 28px;border-radius:var(--r);transition:opacity var(--t),background var(--t);cursor:pointer}
-.btn-a{background:var(--accent);color:#0C0E11}.btn-a:hover{opacity:.85}
-.btn-g{background:none;border:1px solid var(--border);color:var(--text)}.btn-g:hover{border-color:var(--muted)}
+.btn-a{background:var(--accent);color:#000000;letter-spacing:.02em}.btn-a:hover{opacity:.85}
+.btn-g{background:rgba(15,27,48,.6);border:1px solid var(--accent);color:var(--text)}.btn-g:hover{border-color:var(--accent);background:rgba(200,169,110,.08)}
 .btn-tg{background:#2AABEE;color:#fff}.btn-tg:hover{opacity:.9}
 .page-shell{padding-top:66px}
 
@@ -417,6 +417,12 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:64px 0 32
   .about-page-badge{display:none}
   .footer-grid{gap:32px}
   .sec{padding:52px 0}
+}
+
+@media(max-width:600px){
+  .btn{font-size:15px;padding:14px 20px;min-height:50px}
+  .btn-a{box-shadow:0 2px 12px rgba(200,169,110,.35)}
+  .btn-g{border-width:1.5px}
 }
 </style>
 
@@ -881,7 +887,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:64px 0 32
   <div class="wrap">
     <div class="about-grid">
       <div class="about-img-wrap">
-        <img class="about-img" src="about_main.jpeg" fetchpriority="high" width="560" height="600" alt="Fischhändler mit frischem Fisch">
+        <img class="about-img" src="pro_nas.webp" fetchpriority="high" width="560" height="600" alt="Fischhändler mit frischem Fisch">
         <div class="about-badge">
           <span data-lang="de">Frisch vom Erzeuger seit 2021</span>
           <span data-lang="it">Fresco dal produttore dal 2021</span>
@@ -977,7 +983,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:64px 0 32
   <div class="page-hero-bg" style="background-image:url('about_main.jpeg')"></div>
   <div class="page-hero-body">
     <div class="tag"><span data-lang="de">Über uns</span><span data-lang="it">Chi siamo</span><span data-lang="ru">О нас</span></div>
-    <h1 class="h2"><span data-lang="de">Leidenschaft für frischen Fisch</span><span data-lang="it">Passione per il pesce fresco</span><span data-lang="ru">Страсть к свежей рыбе</span></h1>
+    <h2 class="h2"><span data-lang="de">Leidenschaft für frischen Fisch</span><span data-lang="it">Passione per il pesce fresco</span><span data-lang="ru">Страсть к свежей рыбе</span></h2>
   </div>
 </div>
 <section class="sec"><div class="wrap">
@@ -1044,12 +1050,12 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:64px 0 32
   <div class="page-hero-bg" style="background-image:url('about_chef.jpeg')"></div>
   <div class="page-hero-body">
     <div class="tag"><span data-lang="de">Wochenangebote</span><span data-lang="it">Offerte</span><span data-lang="ru">Акции</span></div>
-    <h1 class="h2"><span data-lang="de">Aktuelle Specials</span><span data-lang="it">Specials attuali</span><span data-lang="ru">Актуальные акции</span></h1>
+    <h2 class="h2"><span data-lang="de">Aktuelle Specials</span><span data-lang="it">Specials attuali</span><span data-lang="ru">Актуальные акции</span></h2>
   </div>
 </div>
 <section class="sec"><div class="wrap">
   <div class="tag"><span data-lang="de">Wochenangebote</span><span data-lang="it">Offerte della settimana</span><span data-lang="ru">Акции недели</span></div>
-  <h1 class="h2" style="margin-bottom:40px"><span data-lang="de">Aktuelle Specials</span><span data-lang="it">Specials attuali</span><span data-lang="ru">Актуальные акции</span></h1>
+  <h2 class="h2" style="margin-bottom:40px"><span data-lang="de">Aktuelle Specials</span><span data-lang="it">Specials attuali</span><span data-lang="ru">Актуальные акции</span></h2>
   <div class="offers-grid">
     <div class="offer-card"><div class="offer-img-wrap"><img loading="lazy" class="offer-img" src="cat_lachs.jpeg" alt="Lachs" width="480" height="320"></div><div class="offer-body"><span class="sale-badge">–25%</span><div class="offer-name"><span data-lang="de">Lachs-Filet, 500g</span><span data-lang="it">Filetto di salmone, 500g</span><span data-lang="ru">Филе лосося, 500г</span></div><div class="offer-desc"><span data-lang="de">Frisches Atlantik-Lachsfilet, ohne Haut, vakuumverpackt.</span><span data-lang="it">Filetto di salmone atlantico, senza pelle, sottovuoto.</span><span data-lang="ru">Свежее филе атлантического лосося без кожи, вакуумная упаковка.</span></div><div class="price-row"><span class="p-old">12 €</span><span class="p-new">9 €</span></div><button class="btn btn-a" style="width:100%;justify-content:center" onclick="addCart('lachs','Lachs-Filet / Filetto salmone / Филе лосося',9,'kg')"><span data-lang="de">In den Warenkorb</span><span data-lang="it">Aggiungi</span><span data-lang="ru">В корзину</span></button></div></div>
     <div class="offer-card"><div class="offer-img-wrap"><img loading="lazy" class="offer-img" src="cat_tiger.jpeg" alt="Garnelen" width="480" height="320"></div><div class="offer-body"><span class="sale-badge">–25%</span><div class="offer-name"><span data-lang="de">Tiger-Garnelen, 300g</span><span data-lang="it">Gamberi tigre, 300g</span><span data-lang="ru">Тигровые креветки, 300г</span></div><div class="offer-desc"><span data-lang="de">Große Tigergarnelen, roh, geschält, IQF gefroren.</span><span data-lang="it">Gamberi tigre grandi, crudi, sgusciati, IQF.</span><span data-lang="ru">Крупные тигровые креветки, сырые, очищенные, IQF.</span></div><div class="price-row"><span class="p-old">8 €</span><span class="p-new">6 €</span></div><button class="btn btn-a" style="width:100%;justify-content:center" onclick="addCart('garnelen','Tiger-Garnelen / Gamberi tigre / Тигровые креветки',6,'kg')"><span data-lang="de">In den Warenkorb</span><span data-lang="it">Aggiungi</span><span data-lang="ru">В корзину</span></button></div></div>
@@ -1070,12 +1076,12 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:64px 0 32
   <div class="page-hero-bg" style="background-image:url('feat3.jpeg')"></div>
   <div class="page-hero-body">
     <div class="tag"><span data-lang="de">Preisliste</span><span data-lang="it">Listino prezzi</span><span data-lang="ru">Прайс-лист</span></div>
-    <h1 class="h2"><span data-lang="de">Alle Produkte</span><span data-lang="it">Tutti i prodotti</span><span data-lang="ru">Все продукты</span></h1>
+    <h2 class="h2"><span data-lang="de">Alle Produkte</span><span data-lang="it">Tutti i prodotti</span><span data-lang="ru">Все продукты</span></h2>
   </div>
 </div>
 <section class="sec"><div class="wrap">
   <div class="tag"><span data-lang="de">Preisliste</span><span data-lang="it">Listino prezzi</span><span data-lang="ru">Прайс-лист</span></div>
-  <h1 class="h2" style="margin-bottom:32px"><span data-lang="de">Alle Produkte</span><span data-lang="it">Tutti i prodotti</span><span data-lang="ru">Все продукты</span></h1>
+  <h2 class="h2" style="margin-bottom:32px"><span data-lang="de">Alle Produkte</span><span data-lang="it">Tutti i prodotti</span><span data-lang="ru">Все продукты</span></h2>
   <div class="cat-tabs">
     <button class="ctab on" onclick="switchCat('mf','ms',this)"><span data-lang="de">🐟 Frischer Fisch</span><span data-lang="it">🐟 Pesce fresco</span><span data-lang="ru">🐟 Свежая рыба</span></button>
     <button class="ctab" onclick="switchCat('ms','mf',this)"><span data-lang="de">🦐 Meeresfrüchte</span><span data-lang="it">🦐 Frutti di mare</span><span data-lang="ru">🦐 Морепродукты</span></button>
@@ -1108,7 +1114,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:64px 0 32
 <div id="page-cart" class="page page-shell">
 <section class="sec"><div class="wrap">
   <div class="tag"><span data-lang="de">Ihre Auswahl</span><span data-lang="it">La vostra selezione</span><span data-lang="ru">Ваш выбор</span></div>
-  <h1 class="h2" style="margin-bottom:40px"><span data-lang="de">Warenkorb</span><span data-lang="it">Carrello</span><span data-lang="ru">Корзина</span></h1>
+  <h2 class="h2" style="margin-bottom:40px"><span data-lang="de">Warenkorb</span><span data-lang="it">Carrello</span><span data-lang="ru">Корзина</span></h2>
   <div id="cart-content"></div>
 </div></section>
 </div>
@@ -1119,7 +1125,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:64px 0 32
   <div class="page-hero-bg" style="background-image:url('del_courier.jpeg')"></div>
   <div class="page-hero-body">
     <div class="tag"><span data-lang="de">Liefergebiet</span><span data-lang="it">Consegna</span><span data-lang="ru">Доставка</span></div>
-    <h1 class="h2"><span data-lang="de">Lieferung –<br>direkt an Ihre Tür</span><span data-lang="it">Consegna –<br>direttamente da voi</span><span data-lang="ru">Доставка –<br>прямо к вашей двери</span></h1>
+    <h2 class="h2"><span data-lang="de">Lieferung –<br>direkt an Ihre Tür</span><span data-lang="it">Consegna –<br>direttamente da voi</span><span data-lang="ru">Доставка –<br>прямо к вашей двери</span></h2>
   </div>
 </div>
 <section class="sec"><div class="wrap">
@@ -1198,7 +1204,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:64px 0 32
   <div class="page-hero-bg" style="background-image:url('del_app.jpeg')"></div>
   <div class="page-hero-body">
     <div class="tag"><span data-lang="de">Kontakt</span><span data-lang="it">Contatti</span><span data-lang="ru">Контакты</span></div>
-    <h1 class="h2"><span data-lang="de">Schreiben Sie uns</span><span data-lang="it">Scriveteci</span><span data-lang="ru">Напишите нам</span></h1>
+    <h2 class="h2"><span data-lang="de">Schreiben Sie uns</span><span data-lang="it">Scriveteci</span><span data-lang="ru">Напишите нам</span></h2>
   </div>
 </div>
 <section class="sec"><div class="wrap">
@@ -1225,12 +1231,12 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:64px 0 32
   <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1560850038-f95de6e715b3?w=1400&q=80')"></div>
   <div class="page-hero-body">
     <div class="tag"><span data-lang="de">Kundenstimmen</span><span data-lang="it">Opinioni</span><span data-lang="ru">Отзывы</span></div>
-    <h1 class="h2"><span data-lang="de">Was Kunden sagen</span><span data-lang="it">Cosa dicono</span><span data-lang="ru">Что говорят клиенты</span></h1>
+    <h2 class="h2"><span data-lang="de">Was Kunden sagen</span><span data-lang="it">Cosa dicono</span><span data-lang="ru">Что говорят клиенты</span></h2>
   </div>
 </div>
 <section class="sec"><div class="wrap">
   <div class="tag center"><span data-lang="de">Kundenstimmen</span><span data-lang="it">Opinioni</span><span data-lang="ru">Отзывы</span></div>
-  <h1 class="h2" style="margin-bottom:48px;text-align:center"><span data-lang="de">Was unsere Kunden sagen</span><span data-lang="it">Cosa dicono i clienti</span><span data-lang="ru">Что говорят клиенты</span></h1>
+  <h2 class="h2" style="margin-bottom:48px;text-align:center"><span data-lang="de">Was unsere Kunden sagen</span><span data-lang="it">Cosa dicono i clienti</span><span data-lang="ru">Что говорят клиенты</span></h2>
   <div class="rev-grid">
     <div class="rev-card"><div class="rev-stars">★★★★★</div><p class="rev-text"><span data-lang="de">„Super frisch, schnelle Lieferung! Der Lachs war der beste, den ich je gegessen habe."</span><span data-lang="it">„Pesce freschissimo, consegna puntuale. Il salmone era il migliore che abbia mai mangiato."</span><span data-lang="ru">„Очень свежо, быстрая доставка! Лосось — лучший из всех, что я пробовал."</span></p><div class="rev-author"><div class="rev-av">MK</div><div><div class="rev-name">Maria K.</div><div class="rev-city">Bayern</div></div></div></div>
     <div class="rev-card"><div class="rev-stars">★★★★★</div><p class="rev-text"><span data-lang="de">„Die Thermobox war noch eiskalt. Endlich ein Service, dem man vertrauen kann."</span><span data-lang="it">„La thermobox era ancora gelata. Finalmente un servizio affidabile."</span><span data-lang="ru">„Термобокс был ещё ледяным. Наконец-то сервис, которому можно доверять."</span></p><div class="rev-author"><div class="rev-av">LB</div><div><div class="rev-name">Luca B.</div><div class="rev-city">Schwabing</div></div></div></div>
@@ -1244,7 +1250,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:64px 0 32
 
 <!-- ══ DATENSCHUTZ ══ -->
 <div id="page-datenschutz" class="page page-shell">
-<section class="sec"><div class="wrap"><div class="tag"><span>Rechtliches</span></div><h1 class="h2" style="margin-bottom:40px">Datenschutzerklärung</h1>
+<section class="sec"><div class="wrap"><div class="tag"><span>Rechtliches</span></div><h2 class="h2" style="margin-bottom:40px">Datenschutzerklärung</h2>
 <div class="legal">
   <h2>1. Verantwortlicher</h2><p>Fruttidimare24 GmbH · info@fruttidimare24.de · +49 89 123 456 789</p>
   <h2>2. Erhebung personenbezogener Daten</h2><p>Wir erheben Name, Adresse, E-Mail und Telefonnummer ausschließlich zur Bearbeitung Ihrer Bestellungen. Eine Weitergabe an Dritte erfolgt nicht, außer zur Auftragserfüllung.</p>
@@ -1257,7 +1263,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:64px 0 32
 
 <!-- ══ IMPRESSUM ══ -->
 <div id="page-impressum" class="page page-shell">
-<section class="sec"><div class="wrap"><div class="tag"><span>Rechtliches</span></div><h1 class="h2" style="margin-bottom:40px">Impressum</h1>
+<section class="sec"><div class="wrap"><div class="tag"><span>Rechtliches</span></div><h2 class="h2" style="margin-bottom:40px">Impressum</h2>
 <div class="legal">
   <h2>Angaben gemäß § 5 TMG</h2><address>Fruttidimare24 GmbH<br>Deutschland</address>
   <h2>Kontakt</h2><p>Telefon: +49 89 123 456 789<br>E-Mail: info@fruttidimare24.de</p>
@@ -1282,7 +1288,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:64px 0 32
         </p>
       </div>
       <div class="fcol">
-        <h5><span data-lang="de">Navigation</span><span data-lang="it">Navigazione</span><span data-lang="ru">Навигация</span></h5>
+        <h5><span data-lang="de">Navigation</span><span data-lang="it">Navigazione</span><span data-lang="ru">Навигация</span></h3>
         <button class="flink" onclick="goPage('about')"><span data-lang="de">Über uns</span><span data-lang="it">Chi siamo</span><span data-lang="ru">О нас</span></button>
         <button class="flink" onclick="goPage('offers')"><span data-lang="de">Angebote</span><span data-lang="it">Offerte</span><span data-lang="ru">Акции</span></button>
         <button class="flink" onclick="goPage('menu')"><span data-lang="de">Preisliste</span><span data-lang="it">Listino</span><span data-lang="ru">Прайс-лист</span></button>
@@ -1290,12 +1296,12 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:64px 0 32
         <button class="flink" onclick="goPage('reviews')"><span data-lang="de">Bewertungen</span><span data-lang="it">Recensioni</span><span data-lang="ru">Отзывы</span></button>
       </div>
       <div class="fcol">
-        <h5><span data-lang="de">Rechtliches</span><span data-lang="it">Legale</span><span data-lang="ru">Правовое</span></h5>
+        <h5><span data-lang="de">Rechtliches</span><span data-lang="it">Legale</span><span data-lang="ru">Правовое</span></h3>
         <button class="flink" onclick="goPage('impressum')">Impressum</button>
         <button class="flink" onclick="goPage('datenschutz')">Datenschutz</button>
       </div>
       <div class="fcol">
-        <h5><span data-lang="de">Kontakt</span><span data-lang="it">Contatti</span><span data-lang="ru">Контакты</span></h5>
+        <h5><span data-lang="de">Kontakt</span><span data-lang="it">Contatti</span><span data-lang="ru">Контакты</span></h3>
         <div class="fcon"><span class="fcon-icon">📧</span><div class="fcon-text"><a href="mailto:info@fruttidimare24.de">info@fruttidimare24.de</a></div></div>
         <div class="fcon"><span class="fcon-icon">📞</span><div class="fcon-text"><a href="tel:+4989123456789">+49 89 123 456 789</a></div></div>
         <div class="fcon"><span class="fcon-icon">📍</span><div class="fcon-text">Fruttidimare24 GmbH</div></div>
