@@ -450,13 +450,14 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:64px 0 32
   <!-- Meta Pixel: вставити тут (отримати на business.facebook.com) -->
   <!-- Example:
   <script>!function(f,b,e,v,n,t,s){...}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','XXXXXXXXXXXXXXX');fbq('track','PageView');</script>
-  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"/></noscript>
+  <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"/></noscript>
   -->
 </head>
 <body data-L="de">
 
 <!-- HEADER -->
-<header>
+<a href="#main-content" class="skip-link" style="position:absolute;top:-40px;left:0;background:var(--accent);color:#000;padding:8px 16px;z-index:9999;transition:top .2s;border-radius:0 0 4px 0" onfocus="this.style.top='0'" onblur="this.style.top='-40px'">Zum Inhalt springen</a>
+<header role="banner">
   <div class="hdr">
     <button class="logo" onclick="goPage('home')">🦐 Fruttidimare<em>24</em></button>
     <div class="hdr-right">
@@ -466,7 +467,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:64px 0 32
         <button class="lbtn" onclick="setL('ru')">RU</button>
       </div>
       <button class="cart-btn" onclick="goPage('cart')">🛒 <span class="cc" id="cc">0</span></button>
-      <button class="burger" id="burger" onclick="toggleMenu()">
+      <button aria-label="Menü öffnen" type="button" class="burger" id="burger" onclick="toggleMenu()">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -487,6 +488,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:64px 0 32
 </nav>
 
 <!-- ══ HOME PAGE ══ -->
+<main id="main-content">
 <div id="page-home" class="page active">
 
 <!-- HERO -->
@@ -498,7 +500,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:64px 0 32
       muted
       loop
       playsinline
-      poster="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=1800&q=60"
+      poster="Hero_gold_font.webp"
     >
       <source src="Seafood_delivery_ocean_to_table_202607292328.mp4" type="video/mp4">
     </video>
@@ -633,7 +635,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:64px 0 32
     </div>
     <div style="text-align:center;margin-top:48px">
       <button class="btn btn-g" onclick="goPage('menu')">
-        <span data-lang="de">Jetzt bestellen →</span><span data-lang="it">Ordina ora →</span><span data-lang="ru">Заказать →</span>
+        <span data-lang="de">Jetzt bestellen →</span><span data-lang="it">Ordina ora →</span><span data-lang="ru">Замовити →</span>
       </button>
     </div>
   </div>
@@ -761,7 +763,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:64px 0 32
         <div class="del-step-title">
           <span data-lang="de">Bestellen</span>
           <span data-lang="it">Ordina</span>
-          <span data-lang="ru">Заказать</span>
+          <span data-lang="ru">Замовте</span>
         </div>
         <div class="del-step-text">
           <span data-lang="de">Wählen Sie Ihre Produkte aus unserem Sortiment und geben Sie Ihre Bestellung bis 20:00 Uhr des Vortags auf – bequem online.</span>
@@ -887,7 +889,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:64px 0 32
   <div class="wrap">
     <div class="about-grid">
       <div class="about-img-wrap">
-        <img class="about-img" src="about_main.jpeg" fetchpriority="high" width="560" height="600" alt="Fischhändler mit frischem Fisch">
+        <img class="about-img" src="about_main.jpeg" fetchpriority="high" width="560" height="600" alt="Fischhändler mit frischem Fisch" fetchpriority="high" width="560" height="600" alt="Fischhändler mit frischem Fisch">
         <div class="about-badge">
           <span data-lang="de">Frisch vom Erzeuger seit 2021</span>
           <span data-lang="it">Fresco dal produttore dal 2021</span>
@@ -991,7 +993,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:64px 0 32
   <!-- Блок 1: основне фото + вступний текст -->
   <div class="about-page-intro">
     <div class="about-page-img-wrap">
-      <img class="about-page-img" src="about_main.jpeg" width="600" height="750" alt="Fischhändler mit frischem Fisch">
+      <img loading="lazy" class="about-page-img" src="about_main.jpeg" width="600" height="750" alt="Fischhändler bei der Arbeit" width="600" height="750" alt="Fischhändler mit frischem Fisch">
       <div class="about-page-badge">
         <span data-lang="de">Frisch vom Erzeuger seit 2021</span>
         <span data-lang="it">Fresco dal produttore dal 2021</span>
@@ -1276,7 +1278,8 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:64px 0 32
 </div>
 
 <!-- ══ FOOTER ══ -->
-<footer>
+</main>
+<footer role="contentinfo">
   <div class="wrap">
     <div class="footer-grid">
       <div class="fbrand">
@@ -1398,7 +1401,7 @@ function renderCart(){
     return '<div class="cart-item"><div class="cart-thumb">🐟</div><div class="cart-info"><div class="cart-iname">'+n+'</div><div class="cart-iprice">'+i.price+' € / '+i.unit+'</div></div><div class="qty-ctrl"><button class="qbtn" onclick="changeQty(\''+i.key+'\',-1)">−</button><span class="qval">'+i.qty+'</span><span class="qunit">'+i.unit+'</span><button class="qbtn" onclick="changeQty(\''+i.key+'\',1)">+</button></div><div class="cart-ltotal">'+(i.price*i.qty).toFixed(2)+' €</div></div>';
   }).join('');
   var note=sub<100?'<div class="snote">'+(until[l]||until.de)+'</div>':'<div class="snote" style="color:var(--accent)">'+(free[l]||free.de)+'</div>';
-  el.innerHTML='<div class="cart-layout"><div>'+items+'</div><div class="cart-sum"><div class="sum-title">'+t[7]+'</div><div class="srow"><span>'+t[0]+'</span><span>'+sub.toFixed(2)+' €</span></div><div class="srow sdel"><span>'+(dLabel[l]||dLabel.de)+'</span><span>'+(del===0?'0 €':del+' €')+'</span></div><div class="srow stotal"><span>'+t[1]+'</span><span class="val">'+total.toFixed(2)+' €</span></div>'+note+'<div class="cart-form"><input class="fi" type="text" placeholder="'+t[3]+'"><input class="fi" type="text" placeholder="'+t[4]+'"><input class="fi" type="tel" placeholder="'+t[5]+'"><input class="fi" type="email" placeholder="E-Mail"><textarea class="fi" rows="3" placeholder="'+t[6]+'" style="resize:vertical"></textarea><button class="btn btn-a" style="justify-content:center" onclick="submitOrder()">'+t[2]+'</button></div></div></div>';
+  el.innerHTML='<div class="cart-layout"><div>'+items+'</div><div class="cart-sum"><div class="sum-title">'+t[7]+'</div><div class="srow"><span>'+t[0]+'</span><span>'+sub.toFixed(2)+' €</span></div><div class="srow sdel"><span>'+(dLabel[l]||dLabel.de)+'</span><span>'+(del===0?'0 €':del+' €')+'</span></div><div class="srow stotal"><span>'+t[1]+'</span><span class="val">'+total.toFixed(2)+' €</span></div>'+note+'<div class="cart-form"><input aria-label="Vor- und Nachname" id="inp-name" class="fi" type="text" placeholder="'+t[3]+'"><input aria-label="Lieferadresse" id="inp-address" class="fi" type="text" placeholder="'+t[4]+'"><input aria-label="Telefonnummer" id="inp-phone" class="fi" type="tel" placeholder="'+t[5]+'"><input aria-label="E-Mail-Adresse" id="inp-email" class="fi" type="email" placeholder="E-Mail"><textarea class="fi" rows="3" placeholder="'+t[6]+'" style="resize:vertical"></textarea><button class="btn btn-a" style="justify-content:center" onclick="submitOrder()">'+t[2]+'</button></div></div></div>';
 }
 
 function submitOrder(){
@@ -1409,6 +1412,21 @@ function submitOrder(){
   t.textContent=m[l]||m.de;t.classList.add('on');
   setTimeout(function(){t.classList.remove('on');renderCart();},3000);
 }
+
+// Sync html[lang] with UI language
+(function(){
+  const observer = new MutationObserver(function(){
+    const active = document.querySelector('[data-lang].active,[data-lang-active]');
+    // sync based on current shown spans
+    const de = document.querySelector('.lang-btn[data-l="de"]');
+    if(de && de.classList.contains('active')) document.documentElement.lang='de';
+    const it = document.querySelector('.lang-btn[data-l="it"]');
+    if(it && it.classList.contains('active')) document.documentElement.lang='it';
+    const ru = document.querySelector('.lang-btn[data-l="ru"]');
+    if(ru && ru.classList.contains('active')) document.documentElement.lang='ru';
+  });
+  observer.observe(document.body, {attributes:true, subtree:true, attributeFilter:['class']});
+})();
 </script>
 </body>
 </html>
