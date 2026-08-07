@@ -20,8 +20,8 @@
   --white:#fff;--danger:#D94F4F;--font:'Inter',sans-serif;--r:4px;--t:.22s ease;--max:1140px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;-webkit-overflow-scrolling:touch}
 img{display:block;max-width:100%}
 button{font-family:var(--font);cursor:pointer}
 a{color:inherit;text-decoration:none}
@@ -37,14 +37,16 @@ body[data-L="ru"] [data-lang="ru"]{display:inherit}
 
 /* ── HEADER ── */
 header{position:fixed;top:0;left:0;right:0;z-index:200;height:66px;
-  background:rgba(0,0,0,.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+  background:rgba(0,0,0,.95);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
 .hdr{max-width:var(--max);margin:0 auto;padding:0 28px;height:100%;
   display:flex;align-items:center;gap:16px}
 .logo{background:none;border:none;display:flex;align-items:center;gap:8px;
   color:var(--white);font-size:17px;font-weight:400;letter-spacing:-.02em}
 .logo em{color:var(--accent);font-style:normal}
 .hdr-right{display:flex;align-items:center;gap:10px;margin-left:auto}
+.hdr-right>*+*{margin-left:0}
 .lang-sw{display:flex;gap:2px}
+.lang-sw>.lbtn+.lbtn{margin-left:2px}
 .lbtn{background:none;border:1px solid transparent;color:var(--muted);
   font-size:11px;font-weight:400;letter-spacing:.07em;padding:5px 9px;
   border-radius:var(--r);transition:all var(--t)}
@@ -63,8 +65,8 @@ header{position:fixed;top:0;left:0;right:0;z-index:200;height:66px;
 .burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
 
 /* ── DROP MENU ── */
-.dropmenu{position:fixed;inset:0;z-index:190;
-  background:rgba(12,14,17,.97);backdrop-filter:blur(16px);
+.dropmenu{position:fixed;top:0;left:0;right:0;bottom:0;inset:0;z-index:190;
+  background:rgba(12,14,17,.97);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);
   display:none;flex-direction:column;justify-content:center;align-items:center;gap:6px;padding-top:66px}
 .dropmenu.open{display:flex}
 .dmlink{background:none;border:none;color:var(--muted);
@@ -94,7 +96,7 @@ header{position:fixed;top:0;left:0;right:0;z-index:200;height:66px;
 .page-shell{padding-top:66px}
 
 /* ── HERO ── */
-.hero{position:relative;min-height:100vh;display:flex;align-items:center;padding-top:66px;overflow:hidden}
+.hero{position:relative;min-height:100vh;min-height:-webkit-fill-available;display:flex;align-items:center;padding-top:66px;overflow:hidden}
 .hero-bg{position:absolute;inset:0;background:#080E1A}
 .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:.55}
 .hero-bg::after{content:'';position:absolute;inset:0;z-index:1;
@@ -394,6 +396,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:64px 0 32
   .about-img{aspect-ratio:16/9}
 }
 @media(max-width:600px){
+  .burger{display:flex}
   .wrap{padding:0 16px}
   .hdr{padding:0 16px}
   .stats-inner{grid-template-columns:repeat(2,1fr)}
@@ -443,6 +446,14 @@ html, body, *, *::before, *::after {
   border-radius:14px;margin:0 auto 16px;color:var(--accent)}
 .rev-stars{display:flex;gap:2px;margin-bottom:8px}
 .logo svg{color:var(--accent)}
+
+@media(max-width:390px){
+  .hero-h1{font-size:clamp(26px,8vw,42px)}
+  .stat-n{font-size:clamp(20px,6vw,28px)}
+  .lbtn{font-size:10px;padding:4px 7px}
+  .cart-btn{font-size:11px;padding:5px 10px}
+  .hdr-right{gap:6px}
+}
 </style>
 
   <!-- Open Graph / Social Preview -->
@@ -654,7 +665,7 @@ html, body, *, *::before, *::after {
     </div>
     <div style="text-align:center;margin-top:48px">
       <button class="btn btn-g" onclick="goPage('menu')">
-        <span data-lang="de">Jetzt bestellen →</span><span data-lang="it">Ordina ora →</span><span data-lang="ru">Заказать →</span>
+        <span data-lang="de">Jetzt bestellen →</span><span data-lang="it">Ordina ora →</span><span data-lang="ru">Замовити →</span>
       </button>
     </div>
   </div>
@@ -782,7 +793,7 @@ html, body, *, *::before, *::after {
         <div class="del-step-title">
           <span data-lang="de">Bestellen</span>
           <span data-lang="it">Ordina</span>
-          <span data-lang="ru">Закажите</span>
+          <span data-lang="ru">Замовте</span>
         </div>
         <div class="del-step-text">
           <span data-lang="de">Wählen Sie Ihre Produkte aus unserem Sortiment und geben Sie Ihre Bestellung bis 20:00 Uhr des Vortags auf – bequem online.</span>
@@ -1150,7 +1161,7 @@ html, body, *, *::before, *::after {
 </div>
 <section class="sec"><div class="wrap">
 
-  <!-- Шаги заказа -->
+  <!-- Кроки замовлення -->
   <div class="tag"><span data-lang="de">So funktioniert es</span><span data-lang="it">Come funziona</span><span data-lang="ru">Как это работает</span></div>
   <h2 class="h2" style="margin-bottom:40px">
     <span data-lang="de">Drei Schritte bis zur frischen Lieferung</span>
@@ -1330,7 +1341,7 @@ html, body, *, *::before, *::after {
       </div>
     </div>
     <div class="footer-bottom">
-      <span class="fcopy">© 2026 Fruttidimare24 GmbH · Deutschland</span>
+      <span class="fcopy">© 2025 Fruttidimare24 GmbH · Deutschland</span>
     </div>
   </div>
 </footer>
